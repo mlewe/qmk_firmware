@@ -18,7 +18,7 @@
 // when testing power-on with ble.  Turn it off otherwise,
 // as the latency of printing most of the debug info messes
 // with the matrix scan, causing keys to drop.
-#define DEBUG_TO_SCREEN 0
+#define DEBUG_TO_SCREEN 1
 
 //static uint16_t last_battery_update;
 //static uint32_t vbat;
@@ -145,8 +145,8 @@ bool iota_gfx_init(void) {
   send_cmd1(ComScanDec);
 #endif
   
-  send_cmd2(SetComPins, 0x2);
-  send_cmd2(SetContrast, 0x8f);
+  send_cmd2(SetComPins, 0x12);
+  send_cmd2(SetContrast, 0xCf);
   send_cmd2(SetPreCharge, 0xf1);
   send_cmd2(SetVComDetect, 0x40);
   send_cmd1(DisplayAllOnResume);
